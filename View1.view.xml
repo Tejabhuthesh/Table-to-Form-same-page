@@ -1,0 +1,41 @@
+<mvc:View controllerName="idarra.arraytotable.controller.View1" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="idProductsTable" inset="true" headerText="MY DETAILS" visible="true" 
+              items="{path: 'Data1>/array1/'}">
+                <columns>
+                    <Column width="auto">
+                        <Text text="Name" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Age" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Designation" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="colss" press="onPress" >
+                        <cells  >
+                            <Text text="{Data1>Name}"   id = "id1" />
+                            <Text text="{Data1>Age}" id = "id2" />
+                            <Text text="{Data1>Designation}" id = "id3" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <f:SimpleForm id="form1" editable="false" layout="ResponsiveGridLayout" title="Form"  visible="true">
+                <f:content>
+                    <Label text="Name" />
+                    <Text text="{Data2>/0/Name}" />
+                    <Label text="Age" />
+                    <Text text="{Data2>/0/Age}" />
+                    <Label text="Designation" />
+                    <Text text="{Data2>/0/Designation}" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>
